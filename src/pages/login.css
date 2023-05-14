@@ -40,11 +40,50 @@
 
 .loginScreen__body {
     position: absolute;
-    top:30%;
+    top: 30%;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     z-index: 1;
     color: white;
+}
+
+.loginScreen__body>div>h1 {
+    font-size: 2.125rem;
+    margin-bottom: 20px;
+}
+
+.loginScreen__body>div>h2 {
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.loginScreen__body>div>h3 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.loginScreen__input {
+    margin: 10px;
+}
+
+.loginScreen__input>form>input {
+    padding: 10px;
+    outline-width: 0;
+    height: 30px;
+    width: 30%;
+    max-width: 500px;
+    border: none;
+}
+
+.loginScreen__getStarted {
+    padding: 16px 20px;
+    font-size: 1rem;
+    border: none;
+    background-color: #e50914;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
 }
