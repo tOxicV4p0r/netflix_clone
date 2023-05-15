@@ -1,5 +1,3 @@
-import HomeScreen from "./pages/HomeScreen"
-import Login from "./pages/Login";
 import {
   BrowserRouter,
   Routes,
@@ -10,6 +8,9 @@ import { auth } from "./firebase";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { login, logout, selectorUser } from "./features/user/userSlice";
+import HomeScreen from "./pages/HomeScreen"
+import Login from "./pages/Login";
+import Profile from "./pages/Profile";
 import './App.css';
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
             <Routes>
               <Route path="/*" element={<HomeScreen />} />
               <Route path="/test" element={<div>test</div>} />
+              <Route path="/profile" element={<Profile />} />
             </Routes>
           ) : <Login />
         }
