@@ -15,21 +15,23 @@ import './App.css';
 
 function App() {
   const user = useSelector(selectorUser);
-  const disPatch = useDispatch();
+  const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log('useEffect/user,dispatch')
     const unsubcribe = onAuthStateChanged(auth, (userAuth) => {
       if (userAuth) {
         console.log(userAuth)
         // Logged in
-        disPatch(login({
+        dispatch(login({
           uid: userAuth.uid,
           email: userAuth.email
         }));
       }
       else {
         // Logged out
-        disPatch(logout);
+        console.log('do logout')
+        dispatch(logout());
       }
     })
 
@@ -37,6 +39,7 @@ function App() {
   }, [])
 
   useEffect(() => {
+    console.log('usereffect/user')
     console.log(user)
   }, [user])
 
@@ -44,7 +47,7 @@ function App() {
     <div className="app">
       <BrowserRouter>
         {
-          user ? (
+          user.user ? (
             <Routes>
               <Route path="/*" element={<HomeScreen />} />
               <Route path="/test" element={<div>test</div>} />
